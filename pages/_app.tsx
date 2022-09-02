@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import styles from "../modules/jss/global_styles";
 import MainLayout from "../modules/layout/MainLayout";
+
+import injectGlobals from '../modules/jss/global_styles'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,4 +15,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default injectGlobals(MyApp);

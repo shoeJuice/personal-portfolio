@@ -21,6 +21,6 @@ describe('Project Card', () => {
 
     it('loads images properly', () => {
         render(<ProjectCard />);
-        expect(screen.getAllByRole('img')).toHaveLength(5);
+        expect(screen.getAllByRole('img')).toHaveLength(1);
     })
 });

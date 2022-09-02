@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Container, Box } from "@chakra-ui/react";
+import { Flex, Container, Box, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 /**
@@ -9,9 +9,15 @@ const Navigation = () => {
   return (
     <Flex
       data-testid="navbar"
-      flexDirection={["row", "row", "column", "column"]}
-      backgroundColor="#1B264F"
+      flexDirection="row"
+      color={useColorModeValue("white", "black")}
+      width="100%"
+      padding={4}
+      mb={20}
+      justifyContent="flex-end"
+      gap={4}
     >
+        
         <NextLink href="/" passHref>
             <a>Home</a>
         </NextLink>
@@ -21,7 +27,6 @@ const Navigation = () => {
         <NextLink href="/" passHref>
             <a>Contact</a>
         </NextLink>
-
     </Flex>
   );
 };
