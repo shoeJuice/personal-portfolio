@@ -21,30 +21,30 @@ const Carousel = ({ images, reverse }: CarouselProps) => {
   return (
     <Flex
       alignSelf="center"
-      paddingY={20}
+      paddingY={10}
       width="50%"
       height="100%"
       justifyContent="center"
       alignContent="center"
-      backgroundColor="#3182ce"
       borderRadius={10}
     >
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <motion.div
           key={image}
           animate={{
             opacity: [0, 1, 0],
-            x: reverse ? [-150, 0, 150] : [150, 0, -150],
+            x: reverse ? ["-40%", "0%", "40%"] : ["40%", "0%", "-40%"],
             transition: { duration: 5, ease: "easeInOut" },
           }}
           style={{
-            padding: 20,
+            padding: 10,
             borderRadius: "1em",
             textAlign: "center",
-            backgroundColor: theme.colors.whiteAlpha[800],
+            height: "100%",
+            backgroundColor: theme.colors.whiteAlpha[800],  
           }}
         >
-          <NextImage width={200} height={200} layout="fixed" src={image} />
+          <NextImage width={200} height={200}  layout="fixed" src={image} />
         </motion.div>
       </AnimatePresence>
     </Flex>

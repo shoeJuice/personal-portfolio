@@ -9,6 +9,7 @@ const globalStyles = {
         backgroundColor: "#302B27",
         height: "100%",
         width: "100%",
+
         },
         "#__next": {
             height: "100%",
@@ -24,6 +25,9 @@ const globalStyles = {
       '::-webkit-scrollbar-thumb': {
         backgroundColor: 'gray',
       },
+      "section": {
+        position: "relative",
+      }
     },
   };
 

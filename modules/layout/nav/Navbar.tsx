@@ -13,7 +13,6 @@ const Navigation = () => {
       color={useColorModeValue("white", "black")}
       width="100%"
       padding={4}
-      mb={20}
       justifyContent="flex-end"
       gap={4}
     >

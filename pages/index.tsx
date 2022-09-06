@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import NextLink from "next/link";
 import useHomeStyles from "../modules/jss/home_styles";
-import { Text, Box, Button, Flex, Link } from "@chakra-ui/react";
+import { Text, Box, Button, Flex, Link, theme } from "@chakra-ui/react";
 import Carousel from "../modules/home/Carousel";
 
 const Home: NextPage = () => {
@@ -20,26 +21,47 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.mainContainer}>
-        <section className={styles.splash}>
-          <Box width="100%" color="white" paddingY={2}>
-            <Text fontSize="4xl">Remy Papillon</Text>
-            <Text fontSize="2xl" mb={5}>
-              Aspiring Front-End Developer
-            </Text>
-            <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
-              Student by day, hobbyist developer by night. I am a self-taught
-              web developer with a passion for learning and problem solving.
-            </Text>
-            <Button mt={4} colorScheme="blue">
-              Contact Me!
-            </Button>
-          </Box>
-          
-          <Image style={{borderRadius: "2em"}} layout="fixed" width={1100} height={500} src="/selfPortrait2.jpg" />
+        <section>
+          <Flex height="100vh" flexDirection={["column", "column", "row", "row"]} mb={[20, 20, 0, 0]} padding={5} alignItems="center">
+            <Box order={[2, 2, 1, 1]} width={["100%", "100%", "50%", "50%"]} color="white" margin="auto" zIndex={3}>
+              <Text fontSize={["2xl", "3xl", "5xl", "7xl"]}>Hi! I&apos;m Remy!</Text>
+              <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
+                Aspiring Front-End Developer
+              </Text>
+              <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
+                Student by day, hobbyist developer by night. I am a self-taught
+                web developer with a passion for learning and problem solving.
+              </Text>
+              <Button mt={4} colorScheme="blue">
+                Contact Me!
+              </Button>
+            </Box>
+
+            <Box order={[1, 1, 2, 2]}>
+              <Image
+                style={{ borderRadius: "2em" }}
+                width={700}
+                height={700}
+                src="/Happy Bunch - Remy - Desk.svg"
+              />
+            </Box>
+          </Flex>
         </section>
 
-        <section>
-          <Flex gap={4} height="100%" width="100%" color="white">
+        <section className={styles.techSection}>
+          <Flex
+            gap={4}
+            paddingX={3}
+            paddingY={10}
+            height="100%"
+            justifyContent="space-between"
+            alignItems="center"
+            color="white"
+            flexDirection={["column", "column", "row", "row"]}
+          >
+            <Text display={["block", "block", "none", "none"]} fontSize="6xl" mb={2}>
+                Technologies
+              </Text>
             <Carousel
               reverse
               images={[
@@ -49,41 +71,36 @@ const Home: NextPage = () => {
                 "/storybook-logo.svg",
               ]}
             />
-            <Box width="50%">
-              <Text fontSize="3xl">Technologies</Text>
-              <Text fontWeight="thin" lineHeight={2.0}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
-                quae quia nisi odio animi perferendis ex odit aperiam atque, ab
-                fuga corporis! Soluta, fugiat molestias! Nobis laudantium cumque
-                obcaecati odit.
+            <Box width={["100%", "100%", "50%", "50%"]}>
+              <Text display={["none", "none", "block", "block"]} fontSize="6xl" mb={2}>
+                Technologies
+              </Text>
+              <Text fontWeight="thin" width={["100%", "100%", "50%", "50%"]} lineHeight={2.0}>
+                The projects I&apos;ve worked on have given me the opportunity
+                to learn a wide variety of technologies. My stack relies heavily
+                on React and NextJS, and many of my front-end projects use
+                ChakraUI for styling. Other libraries and frameworks I have used
+                include Redux, Jest, Storybook, and Framer-Motion among many
+                others and I am always looking to learn more.
               </Text>
             </Box>
           </Flex>
         </section>
 
-        <section>
+        <section className={styles.techSection}>
           <Flex
             gap={4}
-            justifyContent="space-between"
+            paddingX={3}
+            paddingY={10}
             height="100%"
-            width="100%"
             color="white"
+            justifyContent="space-between"
+            alignItems="center"
+            flexDirection={["column", "column", "row", "row"]}
           >
-            <Box width="50%">
-              <Text fontSize="3xl">Languages</Text>
-              <Text fontWeight="thin" lineHeight={2.0}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
-                quae quia nisi odio animi perferendis ex odit aperiam atque, ab
-                fuga corporis! Soluta, fugiat molestias! Nobis laudantium cumque
-                obcaecati odit.
-                {<br />}
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-                perferendis omnis nostrum hic, a deleniti consectetur eos optio
-                eligendi molestiae id et voluptatum voluptate deserunt autem
-                expedita, dolorem facilis repellendus!
+            <Text display={["block", "block", "none", "none"]} fontSize="6xl" mb={2}>
+                Languages
               </Text>
-            </Box>
             <Carousel
               images={[
                 "/Jest-logo.svg",
@@ -92,11 +109,46 @@ const Home: NextPage = () => {
                 "/storybook-logo.svg",
               ]}
             />
+            <Box width={["100%", "100%", "50%", "50%"]}>
+              <Text display={["none", "none", "block", "block"]} fontSize="6xl" mb={2}>
+                Languages
+              </Text>
+              <Text fontWeight="thin" width={["100%", "100%", "50%", "50%"]} lineHeight={2.0}>
+                I have a strong background in Python, where it has been used as
+                a primary language of instruction in my university courses. I
+                have used Python in tandem with React to build one of my first
+                full-stack projects. While Python is one of my strongest
+                languages, I otherwise have a strong understanding of Javascript
+                and Typescript. Other languages I have experience with include
+                Java and C++.
+              </Text>
+            </Box>
           </Flex>
         </section>
       </main>
 
-      <footer></footer>
+      <Flex
+        as="footer"
+        paddingY={2}
+        fontWeight="light"
+        backgroundColor="whiteAlpha.500"
+        flexDirection="column"
+        alignItems="center"
+        color="white"
+      >
+        <Text>Remsfield Papillon, 2022</Text>
+        <Text>
+          Images by Pablo Stanley, courtesy of{" "}
+          {
+            <NextLink href="https://blush.design/" passHref>
+              <Link _hover={{ color: theme.colors.blackAlpha[900],
+              textDecoration: "underline"}}>
+                Blush Designs
+              </Link>
+            </NextLink>
+          }
+        </Text>
+      </Flex>
     </div>
   );
 };
