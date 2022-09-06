@@ -22,9 +22,23 @@ const Home: NextPage = () => {
 
       <main className={styles.mainContainer}>
         <section>
-          <Flex height="100vh" flexDirection={["column", "column", "row", "row"]} mb={[20, 20, 0, 0]} padding={5} alignItems="center">
-            <Box order={[2, 2, 1, 1]} width={["100%", "100%", "50%", "50%"]} color="white" margin="auto" zIndex={3}>
-              <Text fontSize={["2xl", "3xl", "5xl", "7xl"]}>Hi! I&apos;m Remy!</Text>
+          <Flex
+            height="100vh"
+            flexDirection={["column", "column", "row", "row"]}
+            mb={[20, 20, 0, 0]}
+            padding={5}
+            alignItems="center"
+          >
+            <Box
+              order={[2, 2, 1, 1]}
+              width={["100%", "100%", "50%", "50%"]}
+              color="white"
+              margin="auto"
+              zIndex={3}
+            >
+              <Text fontSize={["2xl", "3xl", "5xl", "7xl"]}>
+                Hi! I&apos;m Remy!
+              </Text>
               <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
                 Aspiring Front-End Developer
               </Text>
@@ -48,83 +62,103 @@ const Home: NextPage = () => {
           </Flex>
         </section>
 
-        <section className={styles.techSection}>
-          <Flex
-            gap={4}
-            paddingX={3}
-            paddingY={10}
-            height="100%"
-            justifyContent="space-between"
-            alignItems="center"
-            color="white"
-            flexDirection={["column", "column", "row", "row"]}
+        <Flex
+          gap={4}
+          paddingX={3}
+          paddingY={10}
+          height="100%"
+          justifyContent="space-between"
+          alignItems="center"
+          color="white"
+          flexDirection={["column", "column", "row", "row"]}
+        >
+          <Text
+            display={["block", "block", "none", "none"]}
+            fontSize="6xl"
+            mb={2}
           >
-            <Text display={["block", "block", "none", "none"]} fontSize="6xl" mb={2}>
-                Technologies
-              </Text>
-            <Carousel
-              reverse
-              images={[
-                "/Jest-logo.svg",
-                "/Nextjs-logo.svg",
-                "/React-icon.svg",
-                "/storybook-logo.svg",
-              ]}
-            />
-            <Box width={["100%", "100%", "50%", "50%"]}>
-              <Text display={["none", "none", "block", "block"]} fontSize="6xl" mb={2}>
-                Technologies
-              </Text>
-              <Text fontWeight="thin" width={["100%", "100%", "50%", "50%"]} lineHeight={2.0}>
-                The projects I&apos;ve worked on have given me the opportunity
-                to learn a wide variety of technologies. My stack relies heavily
-                on React and NextJS, and many of my front-end projects use
-                ChakraUI for styling. Other libraries and frameworks I have used
-                include Redux, Jest, Storybook, and Framer-Motion among many
-                others and I am always looking to learn more.
-              </Text>
-            </Box>
-          </Flex>
-        </section>
+            Technologies
+          </Text>
+          <Carousel
+            reverse
+            images={[
+              "/Jest-logo.svg",
+              "/Nextjs-logo.svg",
+              "/React-icon.svg",
+              "/storybook-logo.svg",
+            ]}
+          />
+          <Box width={["100%", "100%", "50%", "50%"]}>
+            <Text
+              display={["none", "none", "block", "block"]}
+              fontSize="6xl"
+              mb={2}
+            >
+              Technologies
+            </Text>
+            <Text
+              fontWeight="thin"
+              width={["100%", "100%", "50%", "50%"]}
+              lineHeight={2.0}
+            >
+              The projects I&apos;ve worked on have given me the opportunity to
+              learn a wide variety of technologies. My stack relies heavily on
+              React and NextJS, and many of my front-end projects use ChakraUI
+              for styling. Other libraries and frameworks I have used include
+              Redux, Jest, Storybook, and Framer-Motion among many others and I
+              am always looking to learn more.
+            </Text>
+          </Box>
+        </Flex>
 
-        <section className={styles.techSection}>
-          <Flex
-            gap={4}
-            paddingX={3}
-            paddingY={10}
-            height="100%"
-            color="white"
-            justifyContent="space-between"
-            alignItems="center"
-            flexDirection={["column", "column", "row", "row"]}
+        <Flex
+          gap={4}
+          paddingX={3}
+          paddingY={10}
+          height="100%"
+          color="white"
+          justifyContent="space-between"
+          alignItems="center"
+          flexDirection={["column", "column", "row", "row"]}
+        >
+          <Text
+            display={["block", "block", "none", "none"]}
+            fontSize="6xl"
+            mb={2}
           >
-            <Text display={["block", "block", "none", "none"]} fontSize="6xl" mb={2}>
-                Languages
-              </Text>
-            <Carousel
-              images={[
-                "/Jest-logo.svg",
-                "/Nextjs-logo.svg",
-                "/React-icon.svg",
-                "/storybook-logo.svg",
-              ]}
-            />
-            <Box width={["100%", "100%", "50%", "50%"]}>
-              <Text display={["none", "none", "block", "block"]} fontSize="6xl" mb={2}>
-                Languages
-              </Text>
-              <Text fontWeight="thin" width={["100%", "100%", "50%", "50%"]} lineHeight={2.0}>
-                I have a strong background in Python, where it has been used as
-                a primary language of instruction in my university courses. I
-                have used Python in tandem with React to build one of my first
-                full-stack projects. While Python is one of my strongest
-                languages, I otherwise have a strong understanding of Javascript
-                and Typescript. Other languages I have experience with include
-                Java and C++.
-              </Text>
-            </Box>
-          </Flex>
-        </section>
+            Languages
+          </Text>
+          <Carousel
+            images={[
+              "/Jest-logo.svg",
+              "/Nextjs-logo.svg",
+              "/React-icon.svg",
+              "/storybook-logo.svg",
+            ]}
+          />
+          <Box width={["100%", "100%", "50%", "50%"]}>
+            <Text
+              display={["none", "none", "block", "block"]}
+              fontSize="6xl"
+              mb={2}
+            >
+              Languages
+            </Text>
+            <Text
+              fontWeight="thin"
+              width={["100%", "100%", "50%", "50%"]}
+              lineHeight={2.0}
+            >
+              I have a strong background in Python, where it has been used as a
+              primary language of instruction in my university courses. I have
+              used Python in tandem with React to build one of my first
+              full-stack projects. While Python is one of my strongest
+              languages, I otherwise have a strong understanding of Javascript
+              and Typescript. Other languages I have experience with include
+              Java and C++.
+            </Text>
+          </Box>
+        </Flex>
       </main>
 
       <Flex
@@ -141,8 +175,12 @@ const Home: NextPage = () => {
           Images by Pablo Stanley, courtesy of{" "}
           {
             <NextLink href="https://blush.design/" passHref>
-              <Link _hover={{ color: theme.colors.blackAlpha[900],
-              textDecoration: "underline"}}>
+              <Link
+                _hover={{
+                  color: theme.colors.blackAlpha[900],
+                  textDecoration: "underline",
+                }}
+              >
                 Blush Designs
               </Link>
             </NextLink>
