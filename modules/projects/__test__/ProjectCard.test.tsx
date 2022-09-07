@@ -11,11 +11,8 @@ describe('Project Card', () => {
 
     it('has all necessary elements', () => {
         render(<ProjectCard />);
-        
-        expect(screen.getByTestId('project-card')).toHaveTextContent('Project Name');
         expect(screen.getByTestId('project-card')).toHaveTextContent('Description');
         expect(screen.getByTestId('project-card')).toHaveTextContent('Technologies');
-        expect(screen.getByTestId('project-card')).toHaveTextContent('Github');
 
     })
 

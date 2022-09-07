@@ -33,7 +33,7 @@ const Carousel = ({ images, reverse }: CarouselProps) => {
           key={image}
           animate={{
             opacity: [0, 1, 0],
-            x: reverse ? ["-40%", "0%", "40%"] : ["40%", "0%", "-40%"],
+            x: reverse ? ["-30%", "0%", "30%"] : ["30%", "0%", "-30%"],
             transition: { duration: 5, ease: "easeInOut" },
           }}
           style={{

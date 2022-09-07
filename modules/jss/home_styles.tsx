@@ -3,7 +3,7 @@ import { theme } from "@chakra-ui/react";
 
 const useHomeStyles = createUseStyles({
     mainContainer: {
-        height: "100vh",
+        height: "100%",
         width: "100%",
     },
     splash: {
@@ -28,10 +28,7 @@ const useHomeStyles = createUseStyles({
         backgroundSize: "2000px 100px",
         backgroundRepeat: "no-repeat",
     },
-    page: {
-        height: "100%",
-        width: "100%"
-    },
+   
     footer: {
         backgroundColor: theme.colors.blue[500],
         color: "white",
