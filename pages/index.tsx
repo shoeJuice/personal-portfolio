@@ -22,6 +22,8 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 const Home: NextPage = () => {
 
+  const clientWindow = typeof window !== "undefined" ? window : null;
+
   const languagesRef = useRef(null);
   const technologiesRef = useRef(null);
 
@@ -64,7 +66,7 @@ const Home: NextPage = () => {
         <Flex
           data-testid="hero"
           as="section"
-          height="100vh"
+          height={clientWindow ? clientWindow.innerHeight : "100vh"}
           flexDirection={["column", "column", "row", "row"]}
           mb={[20, 20, 0, 0]}
           padding={10}
