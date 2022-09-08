@@ -13,12 +13,14 @@ import {
   theme,
   useColorModeValue,
   HStack,
+  IconButton,
 } from "@chakra-ui/react";
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import Carousel from "../modules/home/Carousel";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+
 
 const Home: NextPage = () => {
-  const styles = useHomeStyles();
 
   const languagesRef = useRef(null);
   const technologiesRef = useRef(null);
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
           name="description"
           content="Hi! My name is Remy Papillon, and I am an aspiring web developer."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
 
       <Box as="main">
@@ -95,6 +97,14 @@ const Home: NextPage = () => {
               <Button mt={4} colorScheme="purple">
                 Contact Me!
               </Button>
+              <HStack mt={2}>
+                <NextLink href="https://github.com/shoeJuice">
+                  <IconButton aria-label="GitHub" variant="ghost" colorScheme="purple" icon={<BsGithub />} />
+                </NextLink>
+                <NextLink href="https://www.linkedin.com/in/remsfield-papillon">
+                  <IconButton aria-label="LinkedIn" variant="ghost" colorScheme="purple" icon={<BsLinkedin />} />
+                </NextLink>
+              </HStack>
             </motion.div>
           </Box>
 

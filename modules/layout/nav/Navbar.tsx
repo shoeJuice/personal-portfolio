@@ -25,7 +25,7 @@ const Navigation = () => {
   return (
     <Flex
       data-testid="navbar"
-      flexDirection={["column", "row"]}
+      flexDirection={["column", "column", "row"]}
       color={useColorModeValue("gray.900", "white")}
       width="100%"
       padding={4}
