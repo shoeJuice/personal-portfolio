@@ -136,7 +136,6 @@ const Home: NextPage = () => {
 
         <Flex
           as="section"
-          
           gap={4}
           paddingX={3}
           paddingY={20}
@@ -148,7 +147,7 @@ const Home: NextPage = () => {
         >
           <Text
             display={["block", "block", "none", "none"]}
-            mt="10em"
+            mt="5em"
             fontSize="4xl"
             mb={2}
           >
