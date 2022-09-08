@@ -1,16 +1,54 @@
+import React, { useEffect, useRef } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
 import useHomeStyles from "../modules/jss/home_styles";
-import { Text, Box, Button, Flex, Link, theme, useColorModeValue, HStack } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  Button,
+  Flex,
+  Link,
+  theme,
+  useColorModeValue,
+  HStack,
+} from "@chakra-ui/react";
+import { motion, useInView, useAnimationControls } from "framer-motion";
 import Carousel from "../modules/home/Carousel";
 
 const Home: NextPage = () => {
   const styles = useHomeStyles();
 
+  const languagesRef = useRef(null);
+  const technologiesRef = useRef(null);
+
+  const languagesInView = useInView(languagesRef);
+  const technologiesInView = useInView(technologiesRef);
+
+  const revealLanguages = useAnimationControls();
+  const revealTechnologies = useAnimationControls();
+
+  useEffect(() => {
+    if (languagesInView) {
+      revealLanguages.start({ opacity: [0, 1] });
+    }
+    else{
+      revealLanguages.start({ opacity: [1, 0] });
+    }
+  }, [languagesInView]);
+
+  useEffect(() => {
+    if (technologiesInView) {
+      revealTechnologies.start({ opacity: [0, 1] });
+    }
+    else{
+      revealTechnologies.start({ opacity: [1, 0] });
+    }
+  }, [technologiesInView]);
+
   return (
-    <div data-testid="home-page">
+    <div data-testid="home-page" style={{ overflowX: "hidden" }}>
       <Head>
         <title>Personal Portfolio - Remy Papillon</title>
         <meta
@@ -36,19 +74,28 @@ const Home: NextPage = () => {
             margin="auto"
             zIndex={3}
           >
-            <Text fontSize={["5xl", "3xl", "5xl", "7xl"]}>
-              Hi! I&apos;m Remy!
-            </Text>
-            <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
-              Aspiring Front-End Developer
-            </Text>
-            <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
-              Student by day, hobbyist developer by night. I am a self-taught
-              web developer with a passion for learning and problem solving.
-            </Text>
-            <Button mt={4} colorScheme="purple">
-              Contact Me!
-            </Button>
+            <motion.div
+              animate={{
+                opacity: [0, 1],
+                transition: {
+                  delay: 0.5,
+                },
+              }}
+            >
+              <Text fontSize={["5xl", "3xl", "5xl", "7xl"]}>
+                Hi! I&apos;m Remy!
+              </Text>
+              <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
+                Aspiring Front-End Developer
+              </Text>
+              <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
+                Student by day, hobbyist developer by night. I am a self-taught
+                web developer with a passion for learning and problem solving.
+              </Text>
+              <Button mt={4} colorScheme="purple">
+                Contact Me!
+              </Button>
+            </motion.div>
           </Box>
 
           <Box
@@ -57,11 +104,22 @@ const Home: NextPage = () => {
             height="90%"
             position="relative"
           >
-            <Image
-              style={{ borderRadius: "2em" }}
-              layout="fill"
-              src="/Happy Bunch - Remy - Desk.svg"
-            />
+            <motion.div
+              animate={{
+                x: ["100%", "0%"],
+                opacity: [0, 1],
+              }}
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <Image
+                style={{ borderRadius: "2em" }}
+                layout="fill"
+                src="/Happy Bunch - Remy - Desk.svg"
+              />
+            </motion.div>
           </Box>
         </Flex>
 
@@ -73,6 +131,7 @@ const Home: NextPage = () => {
           justifyContent="space-between"
           alignItems="center"
           flexDirection={["column", "column", "row", "row"]}
+          ref={technologiesRef}
         >
           <Text
             display={["block", "block", "none", "none"]}
@@ -90,22 +149,28 @@ const Home: NextPage = () => {
               "/storybook-logo.svg",
             ]}
           />
+
           <Box width={["100%", "100%", "50%", "50%"]} padding={10}>
-            <Text
-              display={["none", "none", "block", "block"]}
-              fontSize="5xl"
-              mb={2}
+            <motion.div
+              animate={revealTechnologies}
+              style={{ width: "100%", height: "100%" }}
             >
-              Technologies
-            </Text>
-            <Text fontWeight="thin" maxWidth="640px" lineHeight={2.0}>
-              The projects I&apos;ve worked on have given me the opportunity to
-              learn a wide variety of technologies. My stack relies heavily on
-              React and NextJS, and many of my front-end projects use ChakraUI
-              for styling. Other libraries and frameworks I have used include
-              Redux, Jest, Storybook, and Framer-Motion among many others and I
-              am always looking to learn more.
-            </Text>
+              <Text
+                display={["none", "none", "block", "block"]}
+                fontSize="5xl"
+                mb={2}
+              >
+                Technologies
+              </Text>
+              <Text fontWeight="thin" maxWidth="640px" lineHeight={2.0}>
+                The projects I&apos;ve worked on have given me the opportunity
+                to learn a wide variety of technologies. My stack relies heavily
+                on React and NextJS, and many of my front-end projects use
+                ChakraUI for styling. Other libraries and frameworks I have used
+                include Redux, Jest, Storybook, and Framer-Motion among many
+                others and I am always looking to learn more.
+              </Text>
+            </motion.div>
           </Box>
         </Flex>
 
@@ -117,6 +182,7 @@ const Home: NextPage = () => {
           justifyContent="space-between"
           alignItems="center"
           flexDirection={["column", "column", "row", "row"]}
+          ref={languagesRef}
         >
           <Text
             display={["block", "block", "none", "none"]}
@@ -133,23 +199,29 @@ const Home: NextPage = () => {
               "/storybook-logo.svg",
             ]}
           />
+
           <Box width={["100%", "100%", "50%", "50%"]} padding={10}>
-            <Text
-              display={["none", "none", "block", "block"]}
-              fontSize="5xl"
-              mb={2}
+            <motion.div
+              animate={revealLanguages}
+              style={{ width: "100%", height: "100%" }}
             >
-              Languages
-            </Text>
-            <Text fontWeight="thin" maxWidth="640px" lineHeight={2.0}>
-              I have a strong background in Python, where it has been used as a
-              primary language of instruction in my university courses. I have
-              used Python in tandem with React to build one of my first
-              full-stack projects. While Python is one of my strongest
-              languages, I otherwise have a strong understanding of Javascript
-              and Typescript. Other languages I have experience with include
-              Java and C++.
-            </Text>
+              <Text
+                display={["none", "none", "block", "block"]}
+                fontSize="5xl"
+                mb={2}
+              >
+                Languages
+              </Text>
+              <Text fontWeight="thin" maxWidth="640px" lineHeight={2.0}>
+                I have a strong background in Python, where it has been used as
+                a primary language of instruction in my university courses. I
+                have used Python in tandem with React to build one of my first
+                full-stack projects. While Python is one of my strongest
+                languages, I otherwise have a strong understanding of Javascript
+                and Typescript. Other languages I have experience with include
+                Java and C++.
+              </Text>
+            </motion.div>
           </Box>
         </Flex>
       </Box>

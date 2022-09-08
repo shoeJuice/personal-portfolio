@@ -30,36 +30,37 @@ const ProjectCard = (props: ProjectCardProps) => {
       borderBottomRadius={4}
       flexDirection="column"
       alignItems="center"
+      boxShadow="lg"
     >
       <Box width="100%" height="35%" backgroundColor="whiteAlpha.900">
         {props.image && <Image src={props.image} width="100%" height="100%" />}
       </Box>
 
-      <Box padding={4}>
+      <Box padding={4} width="100%">
         <Text fontSize="2xl" mb={5}>
           {props.title}
         </Text>
-        <Text fontSize="lg" fontWeight="medium" mb={2}>
+        <Text fontSize="lg" fontWeight="medium" mb={1}>
           Technologies
         </Text>
-        <HStack mb={5}>
+        <Flex gap={2} flexWrap="wrap" mb={2}>
           {props.technologies.map((technology, key) => (
             <Text key={key}>{"\u2022" + " " + technology}</Text>
           ))}
-        </HStack>
-        <Text fontSize="lg" fontWeight="medium" mb={2}>
+        </Flex>
+        <Text fontSize="lg" fontWeight="medium" mb={1}>
           Languages
         </Text>
-        <HStack mb={5}>
+        <Flex gap={2} flexWrap="wrap" mb={2}>
           {props.languages.map((language, key) => (
             <Text key={key}>{"\u2022" + " " + language}</Text>
           ))}
-        </HStack>
-        <Text fontSize="lg" fontWeight="medium" mb={2}>
+        </Flex>
+        <Text fontSize="lg" fontWeight="medium" mb={1}>
           Description
         </Text>
         <Text maxWidth="450px">{props.description}</Text>
-        <HStack mt={5}>
+        <HStack mt={3}>
           {props.repo && (
             <NextLink href={props.repo} passHref>
               <Button colorScheme="purple">Github</Button>

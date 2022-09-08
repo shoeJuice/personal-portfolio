@@ -62,7 +62,7 @@ const Navigation = () => {
         <NextLink href="/projects" passHref>
           <Link>Projects</Link>
         </NextLink>
-        <NextLink href="/" passHref>
+        <NextLink href="/contact" passHref>
           <Link>Contact</Link>
         </NextLink>
       </Stack>
