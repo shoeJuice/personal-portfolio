@@ -148,7 +148,7 @@ const Home: NextPage = () => {
           <Text
             display={["flex", "flex", "none", "none"]}
             fontSize="5xl"
-            mt={20}
+            mt={50}
             mb={2}
           >
             Technologies
