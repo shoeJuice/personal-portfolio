@@ -148,7 +148,7 @@ const Home: NextPage = () => {
         >
           <Text
             display={["block", "block", "none", "none"]}
-            mt="20em"
+            mt="10em"
             fontSize="4xl"
             mb={2}
           >
