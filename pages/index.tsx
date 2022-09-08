@@ -76,7 +76,6 @@ const Home: NextPage = () => {
             order={[2, 2, 1, 1]}
             width={["100%", "100%", "50%", "50%"]}
             margin="auto"
-            zIndex={3}
           >
             <motion.div
               animate={{
