@@ -107,59 +107,7 @@ const Home: NextPage = () => {
               </HStack>
             </motion.div>
           </Box>
-
-          <Box
-            order={[1, 1, 2, 2]}
-            width={["100%", "100%", "50%"]}
-            height="90%"
-            position="relative"
-          >
-            <motion.div
-              animate={{
-                x: ["100%", "0%"],
-                opacity: [0, 1],
-              }}
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <Image
-                style={{ borderRadius: "2em" }}
-                layout="fill"
-                src="/Happy Bunch - Remy - Desk.svg"
-              />
-            </motion.div>
-          </Box>
-        </Flex>
-
-        <Flex
-          gap={4}
-          paddingX={3}
-          paddingY={10}
-          height="100%"
-          justifyContent="space-between"
-          alignItems="center"
-          flexDirection={["column", "column", "row", "row"]}
-          ref={technologiesRef}
-        >
-          <Text
-            display={["block", "block", "none", "none"]}
-            fontSize="5xl"
-            mb={2}
-          >
-            Technologies
-          </Text>
-          <Carousel
-            reverse
-            images={[
-              "/Jest-logo.svg",
-              "/Nextjs-logo.svg",
-              "/React-icon.svg",
-              "/storybook-logo.svg",
-            ]}
-          />
-
+          
           <Box width={["100%", "100%", "50%", "50%"]} padding={10}>
             <motion.div
               animate={revealTechnologies}

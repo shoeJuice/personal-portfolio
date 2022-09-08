@@ -16,11 +16,14 @@ import ProjectCard from "../modules/projects/ProjectCard";
 const Projects: NextPage = ({ data }: any) => {
   return (
     <Container paddingY={4}>
-        <Head>
-            <title>Projects - Remy Papillon</title>
-            <meta name="description" content="A list of projects I have worked on." />
-            <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
-        </Head>
+      <Head>
+        <title>Projects - Remy Papillon</title>
+        <meta
+          name="description"
+          content="A list of projects I have worked on."
+        />
+        <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
+      </Head>
       <Text fontSize="4xl" textAlign="center" mt={10}>
         Projects
       </Text>
@@ -39,8 +42,6 @@ const Projects: NextPage = ({ data }: any) => {
   );
 };
 
-
-
 export const getStaticProps: GetStaticProps = async (
   ctx: GetStaticPropsContext
 ) => {
@@ -53,6 +54,9 @@ export const getStaticProps: GetStaticProps = async (
       props: { data },
     };
   } catch (error) {
+    console.error(error);
+    console.log("Base URL: ", process.env.NEXT_PUBLIC_BASE_URL);
+
     return {
       notFound: true,
     };
