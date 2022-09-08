@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
 
-      <Box as="main">
+      <Flex flexDirection="column" gap={6} as="main">
         <Flex
           data-testid="hero"
           as="section"
@@ -147,8 +147,8 @@ const Home: NextPage = () => {
         >
           <Text
             display={["flex", "flex", "none", "none"]}
-            fontSize="5xl"
-            mt={20}
+            fontSize="4xl"
+            
             mb={2}
           >
             Technologies
@@ -170,7 +170,7 @@ const Home: NextPage = () => {
             >
               <Text
                 display={["none", "none", "block", "block"]}
-                fontSize="5xl"
+                fontSize="4xl"
                 mb={2}
               >
                 Technologies
@@ -237,7 +237,7 @@ const Home: NextPage = () => {
             </motion.div>
           </Box>
         </Flex>
-      </Box>
+      </Flex>
     </div>
   );
 };
