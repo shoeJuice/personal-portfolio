@@ -134,6 +134,8 @@ const Home: NextPage = () => {
         </Flex>
 
         <Flex
+          as="section"
+          mt={10}
           gap={4}
           paddingX={3}
           paddingY={10}

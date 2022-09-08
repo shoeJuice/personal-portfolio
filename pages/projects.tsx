@@ -49,10 +49,13 @@ export const getStaticProps: GetStaticProps = async (
       baseURL: process.env.NEXT_PUBLIC_BASE_URL,
     });
 
+
     return {
       props: { data },
     };
   } catch (error) {
+    console.error(error);
+    console.log("Base URL: ", process.env.NEXT_PUBLIC_BASE_URL);
     return {
       notFound: true,
     };
