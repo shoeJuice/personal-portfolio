@@ -135,7 +135,7 @@ const Home: NextPage = () => {
 
         <Flex
           as="section"
-          mt={20}
+          
           gap={4}
           paddingX={3}
           paddingY={10}
@@ -148,6 +148,7 @@ const Home: NextPage = () => {
           <Text
             display={["flex", "flex", "none", "none"]}
             fontSize="5xl"
+            mt={20}
             mb={2}
           >
             Technologies
