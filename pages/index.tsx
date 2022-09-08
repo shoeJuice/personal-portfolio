@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         <Flex
           data-testid="hero"
           as="section"
-          height={clientWindow ? clientWindow.innerHeight : "100vh"}
+          height={"100vh"}
           flexDirection={["column", "column", "row", "row"]}
           mb={[20, 20, 0, 0]}
           padding={10}
