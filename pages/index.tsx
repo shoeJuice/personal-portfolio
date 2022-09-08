@@ -138,7 +138,7 @@ const Home: NextPage = () => {
           
           gap={4}
           paddingX={3}
-          paddingY={10}
+          paddingY={20}
           height="100%"
           justifyContent="space-between"
           alignItems="center"
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
           <Text
             display={["flex", "flex", "none", "none"]}
             fontSize="5xl"
-            mt={50}
+            mt={20}
             mb={2}
           >
             Technologies
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
         <Flex
           gap={4}
           paddingX={3}
-          paddingY={10}
+          paddingY={20}
           height="100%"
           justifyContent="space-between"
           alignItems="center"
