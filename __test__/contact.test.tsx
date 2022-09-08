@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import Contact from '../contact';
+import Contact from '../pages/contact';
 
 describe('contact page', () => {
     it('renders properly', () => {

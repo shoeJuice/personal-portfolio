@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import Home from '../index'
+import Home from '../pages/index'
 
 describe('Main Page', () => {
     it('loads properly', () => {
