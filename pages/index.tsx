@@ -62,11 +62,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
 
-      <Flex flexDirection="column" gap={6} as="main">
+      <Flex flexDirection="column" height="100%" gap={6} as="main">
         <Flex
           data-testid="hero"
           as="section"
-          height={"100vh"}
+          height="100vh"
           flexDirection={["column", "column", "row", "row"]}
           mb={[20, 20, 0, 0]}
           padding={10}
@@ -111,8 +111,8 @@ const Home: NextPage = () => {
 
           <Box
             order={[1, 1, 2, 2]}
-            width={["100%", "100%", "50%"]}
-            height="90%"
+            width={["100%", "100%", "50%", "50%"]}
+            height={["50%", "50%", "100%", "100%"]}
             position="relative"
           >
             <motion.div
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
           as="section"
           gap={4}
           paddingX={3}
-          paddingY={20}
+          paddingY={15}
           height="100%"
           justifyContent="space-between"
           alignItems="center"
@@ -147,7 +147,6 @@ const Home: NextPage = () => {
         >
           <Text
             display={["block", "block", "none", "none"]}
-            mt="5em"
             fontSize="4xl"
             mb={2}
           >
