@@ -147,9 +147,9 @@ const Home: NextPage = () => {
           ref={technologiesRef}
         >
           <Text
-            display={["flex", "flex", "none", "none"]}
+            display={["block", "block", "none", "none"]}
+            mt="20em"
             fontSize="4xl"
-            
             mb={2}
           >
             Technologies
@@ -171,7 +171,7 @@ const Home: NextPage = () => {
             >
               <Text
                 display={["none", "none", "block", "block"]}
-                fontSize="4xl"
+                fontSize="5xl"
                 mb={2}
               >
                 Technologies
