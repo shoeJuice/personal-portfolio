@@ -201,7 +201,6 @@ const Home: NextPage = () => {
           </Text>
           <Carousel
             images={[
-              "/Cpp-Logo.svg",
               "/Java-Logo.svg",
               "/JavaScript-Logo.svg",
               "/TypeScript-Logo.svg",
@@ -227,7 +226,7 @@ const Home: NextPage = () => {
                 have used Python in tandem with React to build one of my first
                 full-stack projects. While Python is one of my strongest
                 languages, I otherwise have a strong understanding of Javascript
-                and Typescript. Other languages I have experience with include
+                and Typescript. Other languages I have some experience with include
                 Java and C++.
               </Text>
             </motion.div>
