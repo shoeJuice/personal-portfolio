@@ -41,8 +41,8 @@ const Projects: NextPage = ({ data }: any) => {
 
 
 
-export const getStaticProps: GetStaticProps = async (
-  ctx: GetStaticPropsContext
+export const getServerSideProps: GetServerSideProps = async (
+  ctx: GetServerSidePropsContext
 ) => {
   try {
     const { data } = await axios.get("/api/projects", {

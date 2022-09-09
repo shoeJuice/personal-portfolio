@@ -99,7 +99,7 @@ const Footer = () => {
         }
       </Text>
       <Text fontSize="sm">
-        Logos by{" "}
+        Logos courtesy of{" "}
         {
           <NextLink href="https://iconape.com/" passHref>
             <Link
