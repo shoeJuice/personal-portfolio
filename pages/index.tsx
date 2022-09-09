@@ -3,15 +3,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
-import useHomeStyles from "../modules/jss/home_styles";
 import {
   Text,
   Box,
   Button,
   Flex,
-  Link,
-  theme,
-  useColorModeValue,
   HStack,
   IconButton,
 } from "@chakra-ui/react";
@@ -21,8 +17,6 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 
 const Home: NextPage = () => {
-
-  const clientWindow = typeof window !== "undefined" ? window : null;
 
   const languagesRef = useRef(null);
   const technologiesRef = useRef(null);
@@ -159,6 +153,8 @@ const Home: NextPage = () => {
               "/Nextjs-logo.svg",
               "/React-icon.svg",
               "/storybook-logo.svg",
+              "/Firebase-logo.svg",
+              "/Redux-logo.svg",
             ]}
           />
 
@@ -205,10 +201,11 @@ const Home: NextPage = () => {
           </Text>
           <Carousel
             images={[
-              "/Jest-logo.svg",
-              "/Nextjs-logo.svg",
-              "/React-icon.svg",
-              "/storybook-logo.svg",
+              "/Cpp-Logo.svg",
+              "/Java-Logo.svg",
+              "/JavaScript-Logo.svg",
+              "/TypeScript-Logo.svg",
+              "/Python.svg"
             ]}
           />
 

@@ -11,7 +11,7 @@ describe('contact page', () => {
 
     it('has all necessary elements', () => {
         render(<Contact />);
-        expect(screen.getByTestId('contact-page')).toHaveTextContent('Leave a message!')
+        expect(screen.getByTestId('contact-page')).toHaveTextContent('Leave a Message!')
         expect(screen.getByTestId('contact-form')).toBeInTheDocument();
     })
 })

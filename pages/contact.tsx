@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import ContactForm from "../modules/forms/ContactForm";
 
 const Contact: NextPage = () => {
