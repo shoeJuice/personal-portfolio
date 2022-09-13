@@ -3,21 +3,12 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
-import {
-  Text,
-  Box,
-  Button,
-  Flex,
-  HStack,
-  IconButton,
-} from "@chakra-ui/react";
+import { Text, Box, Button, Flex, HStack, IconButton } from "@chakra-ui/react";
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import Carousel from "../modules/home/Carousel";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 
-
 const Home: NextPage = () => {
-
   const languagesRef = useRef(null);
   const technologiesRef = useRef(null);
 
@@ -30,8 +21,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (languagesInView) {
       revealLanguages.start({ opacity: [0, 1] });
-    }
-    else{
+    } else {
       revealLanguages.start({ opacity: [1, 0] });
     }
   }, [languagesInView]);
@@ -39,8 +29,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (technologiesInView) {
       revealTechnologies.start({ opacity: [0, 1] });
-    }
-    else{
+    } else {
       revealTechnologies.start({ opacity: [1, 0] });
     }
   }, [technologiesInView]);
@@ -89,15 +78,27 @@ const Home: NextPage = () => {
                 Student by day, hobbyist developer by night. I am a self-taught
                 web developer with a passion for learning and problem solving.
               </Text>
-              <Button mt={4} colorScheme="purple">
-                Contact Me!
-              </Button>
+              <NextLink href="/contact" passHref>
+                <Button mt={4} colorScheme="purple">
+                  Contact Me!
+                </Button>
+              </NextLink>
               <HStack mt={2}>
                 <NextLink href="https://github.com/shoeJuice">
-                  <IconButton aria-label="GitHub" variant="ghost" colorScheme="purple" icon={<BsGithub />} />
+                  <IconButton
+                    aria-label="GitHub"
+                    variant="ghost"
+                    colorScheme="purple"
+                    icon={<BsGithub />}
+                  />
                 </NextLink>
                 <NextLink href="https://www.linkedin.com/in/remsfield-papillon">
-                  <IconButton aria-label="LinkedIn" variant="ghost" colorScheme="purple" icon={<BsLinkedin />} />
+                  <IconButton
+                    aria-label="LinkedIn"
+                    variant="ghost"
+                    colorScheme="purple"
+                    icon={<BsLinkedin />}
+                  />
                 </NextLink>
               </HStack>
             </motion.div>
@@ -204,7 +205,7 @@ const Home: NextPage = () => {
               "/Java-Logo.svg",
               "/JavaScript-Logo.svg",
               "/TypeScript-Logo.svg",
-              "/Python.svg"
+              "/Python.svg",
             ]}
           />
 
@@ -226,8 +227,8 @@ const Home: NextPage = () => {
                 have used Python in tandem with React to build one of my first
                 full-stack projects. While Python is one of my strongest
                 languages, I otherwise have a strong understanding of Javascript
-                and Typescript. Other languages I have some experience with include
-                Java and C++.
+                and Typescript. Other languages I have some experience with
+                include Java and C++.
               </Text>
             </motion.div>
           </Box>
