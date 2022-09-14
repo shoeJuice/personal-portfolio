@@ -50,7 +50,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         </Text>
         <Flex gap={2} flexWrap="wrap" mb={2}>
           {props.technologies.map((technology, key) => (
-            <Text key={key}>{"\u2022" + " " + technology}</Text>
+            <Text key={key}>{" \u2022" + " " + technology}</Text>
           ))}
         </Flex>
         <Text fontSize="lg" fontWeight="medium" mb={1}>
@@ -58,7 +58,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         </Text>
         <Flex gap={2} flexWrap="wrap" mb={2}>
           {props.languages.map((language, key) => (
-            <Text key={key}>{"\u2022" + " " + language}</Text>
+            <Text key={key}>{" \u2022" + " " + language}</Text>
           ))}
         </Flex>
         <Text fontSize="lg" fontWeight="medium" mb={1}>

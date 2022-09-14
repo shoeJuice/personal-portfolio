@@ -72,10 +72,10 @@ const Home: NextPage = () => {
                 Hi! I&apos;m Remy!
               </Text>
               <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
-                Aspiring Front-End Developer
+                Front-End Developer
               </Text>
               <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
-                Student by day, hobbyist developer by night. I am a self-taught
+                Student by day, developer by night. I am a self-taught
                 web developer with a passion for learning and problem solving.
               </Text>
               <NextLink href="/contact" passHref>
@@ -227,7 +227,7 @@ const Home: NextPage = () => {
                 have used Python in tandem with React to build one of my first
                 full-stack projects. While Python is one of my strongest
                 languages, I otherwise have a strong understanding of Javascript
-                and Typescript. Other languages I have some experience with
+                and Typescript. Other languages I have experience with
                 include Java and C++.
               </Text>
             </motion.div>
