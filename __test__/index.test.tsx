@@ -11,7 +11,7 @@ describe('Main Page', () => {
     it('has all necessary elements', () => {
         render(<Home />);
         expect(screen.getByTestId('home-page')).toHaveTextContent("Hi! I'm Remy!");
-        expect(screen.getByTestId('home-page')).toHaveTextContent('Aspiring Front-End Developer');
+        expect(screen.getByTestId('home-page')).toHaveTextContent('Front-End Developer');
         expect(screen.getByTestId('home-page')).toHaveTextContent('Technologies');
         expect(screen.getByTestId('home-page')).toHaveTextContent('Languages');
     })

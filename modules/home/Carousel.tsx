@@ -37,7 +37,7 @@ const Carousel = ({ images, reverse }: CarouselProps) => {
             transition: { duration: 5, ease: "easeInOut" },
           }}
           style={{
-            padding: 10,
+            padding: 20,
             borderRadius: "1em",
             textAlign: "center",
             height: "100%",
