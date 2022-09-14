@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
-import { Box, Flex, Text, Button, HStack, Image, useColorModeValue } from "@chakra-ui/react";
-import { getPlaiceholder } from "plaiceholder";
-
-import NextImage from "next/image";
+import {
+  Box,
+  Flex,
+  Text,
+  Button,
+  HStack,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 
 type ProjectCardProps = {
@@ -22,9 +25,6 @@ type ProjectCardProps = {
  * with a link to the project's page and repository.
  */
 const ProjectCard = (props: ProjectCardProps) => {
-
-  
-
   return (
     <Flex
       maxWidth="645px"

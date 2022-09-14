@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion, useCycle, AnimatePresence } from "framer-motion";
-import { useColorModeValue, Box, Flex, theme, Text } from "@chakra-ui/react";
+import { Flex, theme } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 type CarouselProps = {

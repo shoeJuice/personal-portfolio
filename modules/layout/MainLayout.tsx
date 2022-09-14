@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Flex, Container, Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import Navbar from "./nav/Navbar";
 import Footer from "./Footer";
-import { createUseStyles } from "react-jss";
-
-const useBackgroundStyles = createUseStyles({
-  backgroundDesign: {},
-});
 
 /**
  * Main Layout component wrapping page content
  */
 const MainLayout = ({ children }: any) => {
-  const styles = useBackgroundStyles();
 
   return (
     <Box
