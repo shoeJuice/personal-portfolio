@@ -61,6 +61,7 @@ const Home: NextPage = () => {
             margin="auto"
           >
             <motion.div
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: [0, 1],
                 transition: {
