@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import { firebaseFirestore } from "../../../config/firebaseConfig";
-import { query, collection, getDocs } from "firebase/firestore";
+import { query, collection, getDocs, orderBy } from "firebase/firestore";
 
 type Data = {
   demo: string;
@@ -21,7 +21,7 @@ export default function getAllProjects(
   req: NextApiRequest,
   res: NextApiResponse<Data[]>
 ) {
-  const queryAllProjects = query(collection(firebaseFirestore, "projects"));
+  const queryAllProjects = query(collection(firebaseFirestore, "projects"), orderBy("priority", "asc"));
   const getAllProjects = async () => {
     const querySnapshot = await getDocs(queryAllProjects).catch((err) => {
       throw new Error(err);

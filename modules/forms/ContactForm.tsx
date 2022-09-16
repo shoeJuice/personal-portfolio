@@ -107,7 +107,7 @@ const ContactForm = () => {
           placeholder="Message"
         />
       </FormControl>
-      <Button onClick={handleSubmit} colorScheme="purple" width="40%">
+      <Button onClick={handleSubmit} disabled={(!firstNameRef.current?.value || !lastNameRef.current?.value || !emailRef.current?.value || !messageRef.current?.value)} colorScheme="purple" width="40%">
         Send
       </Button>
     </Flex>

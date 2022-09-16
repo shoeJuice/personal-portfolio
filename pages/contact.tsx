@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 import { Container, Text } from "@chakra-ui/react";
 import ContactForm from "../modules/forms/ContactForm";
@@ -15,13 +16,30 @@ const Contact: NextPage = () => {
         />
         <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
-      <Text as="h2" fontSize="4xl">
-        Leave a Message!
-      </Text>
-      <p>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.25 }}
+      >
+        <Text as="h2" fontSize="4xl">
+          Leave a Message!
+        </Text>
+      </motion.div>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.25, delay: 0.5 }}
+      >
         Feel free to leave a message! I will get back to you as soon as I can.
-      </p>
-      <ContactForm />
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.75 }}
+      >
+        <ContactForm />
+      </motion.div>
     </Container>
   );
 };
