@@ -59,6 +59,9 @@ const Navigation = () => {
         <NextLink href="/" passHref>
           <Link>Home</Link>
         </NextLink>
+        <NextLink href="/" passHref>
+          <Link>About</Link>
+        </NextLink>
         <NextLink href="/projects" passHref>
           <Link>Projects</Link>
         </NextLink>

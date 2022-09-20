@@ -14,6 +14,7 @@ describe("Navbar", () => {
   it("renders all links", () => {
     render(<Navbar />);
     expect(screen.getByTestId("navbar")).toHaveTextContent("Home");
+    expect(screen.getByTestId("navbar")).toHaveTextContent("About");
     expect(screen.getByTestId("navbar")).toHaveTextContent("Projects");
     expect(screen.getByTestId("navbar")).toHaveTextContent("Contact");
   });

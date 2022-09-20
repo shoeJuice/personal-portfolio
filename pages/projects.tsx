@@ -42,6 +42,7 @@ const Projects: NextPage = ({ data }: any) => {
 export const getStaticProps: GetStaticProps = async (
   ctx: GetStaticPropsContext
 ) => {
+  
   try {
     const { data } = await axios.get("/api/projects", {
       baseURL: process.env.NEXT_PUBLIC_BASE_URL,

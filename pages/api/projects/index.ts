@@ -27,6 +27,7 @@ export default function getAllProjects(
       throw new Error(err);
     });
     return querySnapshot.docs.map((doc) => {
+      //console.log(doc.data());
       let docToJSONString = JSON.stringify(doc.data());
       return JSON.parse(docToJSONString);
     });
