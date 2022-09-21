@@ -65,7 +65,7 @@ const AboutMe: NextPage = () => {
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 In my free time, I enjoy playing computer games and exercising.
-                I also thorougly enjoy reading manga and watching anime. My
+                I also thoroughly enjoy reading manga and watching anime. My
                 favorite manga is One Piece, my favorite anime being Karate
                 Shoukoushi Kohinata Minoru.
               </Text>
