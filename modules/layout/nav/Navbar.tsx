@@ -69,10 +69,10 @@ const Navigation = () => {
         <NextLink href="/contact" passHref>
           <Link>Contact</Link>
         </NextLink>
+        <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
+          <Button colorScheme="purple">Resume</Button>
+        </NextLink>
       </Stack>
-      <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
-        <Button colorScheme="purple">Resume</Button>
-      </NextLink>
       <ColorModeSwitcher display={["none", "none", "flex", "flex"]} />
     </Flex>
   );

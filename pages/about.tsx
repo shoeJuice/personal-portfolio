@@ -28,20 +28,21 @@ const AboutMe: NextPage = () => {
       <Flex
         height={"100vh"}
         as="main"
-        width="container.xl"
+        width={["100%", "100%", "70%", "70%"]}
         marginX="auto"
         padding={10}
+        
         justifyContent="space-between"
       >
-        <Flex as="section" width="100%" gap={3} justifyContent="space-between">
-          <Box width="50%">
+        <Flex as="section" width="100%"  justifyContent="space-between">
+          <Box width="container.md">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Text paddingY={2} fontSize="6xl" fontWeight="semibold">
+              <Text paddingY={2}  fontSize="6xl" fontWeight="semibold">
                 About Me
               </Text>
             </motion.div>
@@ -60,7 +61,7 @@ const AboutMe: NextPage = () => {
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 I&apos;ve been writing React projects for 2 years now, and
                 I&apos;ve held numerous internships stretching back to high
-                school. 
+                school.
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 In my free time, I enjoy playing computer games and exercising.
@@ -70,21 +71,25 @@ const AboutMe: NextPage = () => {
               </Text>
             </motion.div>
           </Box>
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            exit={{ opacity: 0, x: "100%" }}
+          <Box
+            display={["none", "none", "block", "block"]}
           >
-            <Image
-              data-testid="self-portrait"
-              borderRadius={8}
-              src="/selfPortrait2.jpg"
-              width="400px"
-              height="400px"
-              position="relative"
-            />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              exit={{ opacity: 0, x: "100%" }}
+            >
+              <Image
+                data-testid="self-portrait"
+                borderRadius={8}
+                src="/selfPortrait2.jpg"
+                width="400px"
+                height="400px"
+                position="relative"
+              />
+            </motion.div>
+          </Box>
         </Flex>
       </Flex>
     </div>
