@@ -10,7 +10,8 @@ import {
   IconButton,
   Stack,
   Text,
-  Link
+  Link,
+  Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -59,7 +60,7 @@ const Navigation = () => {
         <NextLink href="/" passHref>
           <Link>Home</Link>
         </NextLink>
-        <NextLink href="/" passHref>
+        <NextLink href="/about" passHref>
           <Link>About</Link>
         </NextLink>
         <NextLink href="/projects" passHref>
@@ -67,6 +68,9 @@ const Navigation = () => {
         </NextLink>
         <NextLink href="/contact" passHref>
           <Link>Contact</Link>
+        </NextLink>
+        <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
+          <Button colorScheme="purple">Resume</Button>
         </NextLink>
       </Stack>
       <ColorModeSwitcher display={["none", "none", "flex", "flex"]} />
