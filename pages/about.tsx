@@ -28,13 +28,13 @@ const AboutMe: NextPage = () => {
       <Flex
         height={"100vh"}
         as="main"
-        width={["100%", "100%", "70%", "70%"]}
+        width={["100%", "100%", "100%", "70%"]}
         marginX="auto"
         padding={10}
         
         justifyContent="space-between"
       >
-        <Flex as="section" width="100%"  justifyContent="space-between">
+        <Flex as="section" width="100%" gap={3} justifyContent="space-between">
           <Box width="container.md">
             <motion.div
               initial={{ opacity: 0 }}
@@ -84,8 +84,8 @@ const AboutMe: NextPage = () => {
                 data-testid="self-portrait"
                 borderRadius={8}
                 src="/selfPortrait2.jpg"
-                width="400px"
-                height="400px"
+                width={["400px"]}
+                height={["400px"]}
                 position="relative"
               />
             </motion.div>
