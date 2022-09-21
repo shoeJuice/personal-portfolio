@@ -1,9 +1,5 @@
 import axios from "axios";
-import type {
-  NextPage,
-  GetStaticProps,
-  GetStaticPropsContext,
-} from "next";
+import type { NextPage, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
 import { Text, Container } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -21,9 +17,19 @@ const Projects: NextPage = ({ data }: any) => {
         />
         <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
-      <Text fontSize="4xl" textAlign="center" mt={10}>
-        Projects
-      </Text>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { ease: "easeIn", duration: 0.5 },
+        }}
+        exit={{ opacity: 0 }}
+      >
+        <Text fontSize="6xl" textAlign="center" mt={10}>
+          Projects
+        </Text>
+      </motion.div>
       {data.map((project: any, key: number) => (
         <motion.div
           key={key}
@@ -31,6 +37,7 @@ const Projects: NextPage = ({ data }: any) => {
             opacity: [0, 1],
             transition: { ease: "linear", delay: key / 10 },
           }}
+          exit={{ opacity: 0 }}
         >
           <ProjectCard {...project} />
         </motion.div>
@@ -42,7 +49,6 @@ const Projects: NextPage = ({ data }: any) => {
 export const getStaticProps: GetStaticProps = async (
   ctx: GetStaticPropsContext
 ) => {
-  
   try {
     const { data } = await axios.get("/api/projects", {
       baseURL: process.env.NEXT_PUBLIC_BASE_URL,

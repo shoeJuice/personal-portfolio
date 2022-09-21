@@ -21,8 +21,9 @@ const Contact: NextPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.25 }}
+        exit={{ opacity: 0 }}
       >
-        <Text as="h2" fontSize="4xl">
+        <Text as="h2" fontSize="6xl">
           Leave a Message!
         </Text>
       </motion.div>
@@ -30,6 +31,7 @@ const Contact: NextPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.25, delay: 0.5 }}
+        exit={{ opacity: 0 }}
       >
         Feel free to leave a message! I will get back to you as soon as I can.
       </motion.p>
@@ -37,6 +39,7 @@ const Contact: NextPage = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.75 }}
+        exit={{ opacity: 0, y: 50 }}
       >
         <ContactForm />
       </motion.div>

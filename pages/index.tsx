@@ -81,13 +81,13 @@ const Home: NextPage = () => {
                   },
                 }}
               >
-                <Text fontSize={["5xl", "3xl", "5xl", "7xl"]}>
+                <Text fontSize={["5xl", "3xl", "6xl", "7xl"]}>
                   Hi! I&apos;m Remy!
                 </Text>
                 <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
                   Front-End Developer
                 </Text>
-                <Text maxWidth="640px" fontWeight="thin" lineHeight={2.0}>
+                <Text maxWidth="640px" fontWeight="thin" lineHeight={"9"}>
                   Student by day, developer by night. I am a CS student with a
                   passion for learning and problem solving. I am currently
                   enrolled at Fairfield University in my senior year.
