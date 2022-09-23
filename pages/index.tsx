@@ -122,6 +122,7 @@ const Home: NextPage = () => {
               order={[1, 1, 2, 2]}
               width={["100%", "100%", "50%", "50%"]}
               height={["50%", "50%", "100%", "100%"]}
+              display={["none", "block", "block", "block"]}
               position="relative"
             >
               <motion.div

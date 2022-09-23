@@ -19,7 +19,7 @@ const MainLayout = ({ children }: any) => {
         height="100%"
         position="relative"
         data-testid="main-container"
-        zIndex={1}
+       zIndex={20}
       >
         {children}
       </Box>
