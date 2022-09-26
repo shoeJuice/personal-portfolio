@@ -35,9 +35,9 @@ const Projects: NextPage = ({ data }: any) => {
           key={key}
           animate={{
             opacity: [0, 1],
-            transition: { ease: "linear", delay: key / 10 },
+            transition: { ease: "linear", delay: key * .50 },
           }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, transition: { ease: "linear", delay: key * .1 } }}
         >
           <ProjectCard {...project} />
         </motion.div>
