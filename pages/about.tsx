@@ -26,7 +26,7 @@ const AboutMe: NextPage = () => {
         <link rel="icon" href="/Avatars-Remy-Alternate.ico" />
       </Head>
       <Flex
-        height={"100vh"}
+        height={["100%", "100vh"]}
         as="main"
         width={["100%", "100%", "100%", "70%"]}
         marginX="auto"
@@ -35,7 +35,7 @@ const AboutMe: NextPage = () => {
         justifyContent="space-between"
       >
         <Flex as="section" width="100%" gap={3} justifyContent="space-between">
-          <Box width="container.md">
+          <Box width={["100%", "100%", "50%"]} height="100%">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -54,14 +54,14 @@ const AboutMe: NextPage = () => {
             >
               <Text fontSize="lg" fontWeight="light" lineHeight="8">
                 Hi! My name is Remy Papillon, and I am currently a senior
-                enrolled at Fairfield University pursuing a degree in Computer
+                enrolled at {<span style={{fontWeight: "bold"}}>Fairfield University</span>} pursuing a degree in Computer
                 Science. I&apos;m originally from Brooklyn, New York and
                 I&apos;m currently living in Trumbull, Connecticut.
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 I&apos;ve been writing React projects for 2 years now, and
                 I&apos;ve held numerous internships stretching back to high
-                school.
+                school working with companies such as {<span style={{fontWeight: "bold"}}>Schrodinger</span>}, {<span style={{fontWeight: "bold"}}>Brooklyn Chamber of Commerce</span>}, and {<span style={{fontWeight: "bold"}}>Heartshare Health Services of New York</span>}.
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 In my free time, I enjoy playing computer games and exercising.

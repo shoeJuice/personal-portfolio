@@ -20,6 +20,7 @@ const Footer = () => {
       backgroundColor={useColorModeValue("purple.100", "purple.900")}
       flexDirection="column"
       alignItems="center"
+      position="relative"
     >
       <Text>Remsfield Papillon, 2022</Text>
       <Text fontSize="sm">
