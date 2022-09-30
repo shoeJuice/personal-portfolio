@@ -61,7 +61,7 @@ const AboutMe: NextPage = () => {
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 I&apos;ve been writing React projects for 2 years now, and
                 I&apos;ve held numerous internships stretching back to high
-                school working with companies such as {<span style={{fontWeight: "bold"}}>Schrodinger</span>}, {<span style={{fontWeight: "bold"}}>Brooklyn Chamber of Commerce</span>}, and {<span style={{fontWeight: "bold"}}>Heartshare Health Services of New York</span>}.
+                school working with companies such as {<span style={{fontWeight: "bold"}}>Schrödinger</span>}, {<span style={{fontWeight: "bold"}}>Brooklyn Chamber of Commerce</span>}, and {<span style={{fontWeight: "bold"}}>Heartshare Health Services of New York</span>}.
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
                 In my free time, I enjoy playing computer games and exercising.
