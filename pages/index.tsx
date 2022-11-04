@@ -85,7 +85,7 @@ const Home: NextPage = () => {
                   Hi! I&apos;m Remy!
                 </Text>
                 <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
-                  Front-End Developer
+                  Aspiring Front-End Developer
                 </Text>
                 <Text maxWidth="640px" fontWeight="thin" lineHeight={"9"}>
                   Student by day, developer by night. I am a CS student with a
