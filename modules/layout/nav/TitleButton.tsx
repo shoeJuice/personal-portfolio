@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@chakra-ui/react";
+import { Button, useChakra } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 type TitleButtonProps = {
@@ -14,8 +14,11 @@ type TitleButtonProps = {
  */
 const TitleButton = React.forwardRef((props: TitleButtonProps, ref: any) => {
     const router = useRouter();
+    const { colorMode, toggleColorMode } = useChakra();
+    const isDark = colorMode === "dark";
   
-    return <Button data-testid="title-button" variant="unstyled" fontSize="2xl" onClick={() => router.push("/")} ref={ref}>{props.name}</Button>;
+    const color = isDark ? "white" : "blackAlpha.900";
+    return <Button data-testid="title-button" variant="unstyled" color={color} fontSize="2xl" onClick={() => router.push("/")} ref={ref}>{props.name}</Button>;
 });
 
 TitleButton.displayName = "TitleButton";

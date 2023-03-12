@@ -16,6 +16,7 @@ import {
   theme,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 import TitleButton from "./TitleButton";
 import ColorModeSwitcher from "../../display/ColorModeSwitcher";
 import NavLink from "./NavLink";
@@ -92,6 +93,10 @@ const Navigation = () => {
         <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
           <Button colorScheme="purple">Resume</Button>
         </NextLink>
+        <HStack>
+          <IconButton colorScheme="purple" aria-label="Github Link" icon={<BsLinkedin />}/>
+          <IconButton colorScheme="purple" aria-label="LinkedIn Link" icon={<BsGithub />}  />
+        </HStack>
       </Stack>
       <ColorModeSwitcher display={["none", "none", "flex", "flex"]} />
     </Flex>
