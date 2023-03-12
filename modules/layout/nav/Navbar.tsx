@@ -93,7 +93,7 @@ const Navigation = () => {
         <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
           <Button colorScheme="purple">Resume</Button>
         </NextLink>
-        <HStack>
+        <HStack display={["flex", "flex", "none", "none"]}>
           <IconButton colorScheme="purple" aria-label="Github Link" icon={<BsLinkedin />}/>
           <IconButton colorScheme="purple" aria-label="LinkedIn Link" icon={<BsGithub />}  />
         </HStack>
