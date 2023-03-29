@@ -55,12 +55,6 @@ const Navigation = () => {
     >
       <Flex width="100%" justifyContent="space-between" alignItems="center">
         <TitleButton
-          whileHover={{
-            y: -5,
-            scale: [1, 1.05],
-            color: theme.colors.purple[200],
-            transition: { type: "linear", duration: 0.2 },
-          }}
           name="Remy Papillon"
         />
         <HStack>
