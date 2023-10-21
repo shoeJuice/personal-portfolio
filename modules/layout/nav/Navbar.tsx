@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   Flex,
@@ -17,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { Routes } from "./enums";
 import TitleButton from "./TitleButton";
 import ColorModeSwitcher from "../../display/ColorModeSwitcher";
 import NavLink from "./NavLink";
@@ -31,7 +31,6 @@ const Navigation = () => {
 
   useEffect(() => {
     router.events.on("routeChangeComplete", () => {
-      console.log("Execution");
       setShow(false);
     });
   }, []);
@@ -41,7 +40,12 @@ const Navigation = () => {
       data-testid="navbar"
       flexDirection={["column", "column", "row"]}
       color={useColorModeValue("gray.900", "white")}
-      bg={[useColorModeValue("whiteAlpha.400", "blackAlpha.400"), useColorModeValue("whiteAlpha.400", "blackAlpha.400"), "transparent", "transparent"]}
+      bg={[
+        useColorModeValue("whiteAlpha.400", "blackAlpha.400"),
+        useColorModeValue("whiteAlpha.400", "blackAlpha.400"),
+        "transparent",
+        "transparent",
+      ]}
       backdropFilter={["auto", "auto", "none", "none"]}
       backdropBlur={["md", "md", "none", "none"]}
       width="100%"
@@ -54,9 +58,7 @@ const Navigation = () => {
       zIndex={70}
     >
       <Flex width="100%" justifyContent="space-between" alignItems="center">
-        <TitleButton
-          name="Remy Papillon"
-        />
+        <TitleButton name="Remy Papillon" />
         <HStack>
           <IconButton
             colorScheme="purple"
@@ -80,16 +82,28 @@ const Navigation = () => {
         height={show ? "100vh" : "auto"}
         alignItems="center"
       >
-        <NavLink route="Home" />
-        <NavLink route="About" />
-        <NavLink route="Projects" />
-        <NavLink route="Contact" />
+        <NavLink route={Routes.HOME} />
+        <NavLink route={Routes.ABOUT} />
+        <NavLink route={Routes.PROJECTS} />
+        <NavLink route={Routes.CONTACT} />
         <NextLink href="/Remsfield_Papillon_Resume.pdf" passHref>
           <Button colorScheme="purple">Resume</Button>
         </NextLink>
         <HStack display={["flex", "flex", "none", "none"]}>
-          <IconButton colorScheme="purple" aria-label="Github Link" icon={<BsLinkedin />}/>
-          <IconButton colorScheme="purple" aria-label="LinkedIn Link" icon={<BsGithub />}  />
+          <NextLink href="https://www.github.com/shoeJuice">
+            <IconButton
+              colorScheme="purple"
+              aria-label="Github Link"
+              icon={<BsGithub />}
+            />
+          </NextLink>
+          <NextLink href="https://www.linkedin.com/in/remsfield-papillon">
+            <IconButton
+              colorScheme="purple"
+              aria-label="LinkedIn Link"
+              icon={<BsLinkedin />}
+            />
+          </NextLink>
         </HStack>
       </Stack>
       <ColorModeSwitcher display={["none", "none", "flex", "flex"]} />

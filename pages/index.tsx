@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 import Carousel from "../modules/home/Carousel";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
+import Splash from "../modules/home/Splash";
 
 const Home: NextPage = () => {
   const languagesRef = useRef(null);
@@ -60,64 +61,7 @@ const Home: NextPage = () => {
             padding={10}
             alignItems="center"
           >
-            <Box
-              order={[2, 2, 1, 1]}
-              width={["100%", "100%", "50%", "50%"]}
-              margin="auto"
-            >
-              <motion.div
-                key="splashText"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: [0, 1],
-                  transition: {
-                    delay: 0.5,
-                  },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: {
-                    delay: 0.5,
-                  },
-                }}
-              >
-                <Text fontSize={["5xl", "3xl", "6xl", "7xl"]}>
-                  Hi! I&apos;m Remy!
-                </Text>
-                <Text fontSize={["xl", "xl", "4xl"]} mb={5}>
-                  Aspiring Front-End Developer
-                </Text>
-                <Text maxWidth="640px" fontWeight="thin" lineHeight={"9"}>
-                  Student by day, developer by night. I am a CS student with a
-                  passion for learning and problem solving. I am currently
-                  enrolled at Fairfield University in my senior year.
-                </Text>
-                <NextLink href="/contact" passHref>
-                  <Button mt={4} colorScheme="purple">
-                    Contact Me!
-                  </Button>
-                </NextLink>
-                <HStack mt={2}>
-                  <NextLink href="https://github.com/shoeJuice">
-                    <IconButton
-                      aria-label="GitHub"
-                      variant="ghost"
-                      colorScheme="purple"
-                      icon={<BsGithub />}
-                    />
-                  </NextLink>
-                  <NextLink href="https://www.linkedin.com/in/remsfield-papillon">
-                    <IconButton
-                      aria-label="LinkedIn"
-                      variant="ghost"
-                      colorScheme="purple"
-                      icon={<BsLinkedin />}
-                    />
-                  </NextLink>
-                </HStack>
-              </motion.div>
-            </Box>
-
+            <Splash />
             <Box
               order={[1, 1, 2, 2]}
               width={["100%", "100%", "50%", "50%"]}
