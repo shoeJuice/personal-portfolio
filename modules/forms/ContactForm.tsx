@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import {
   HStack,
@@ -20,6 +20,7 @@ const ContactForm = () => {
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [formDisabled, setFormDisabled] = useState<boolean>(true);
 
   const handleSubmit = () => {
     let submitData = {
@@ -46,6 +47,22 @@ const ContactForm = () => {
         console.log("Data submitted, view in console");
       });
   };
+
+   const checkFormValidity = () => {
+    const anyFieldEmpty =
+      firstNameRef.current?.value.trim() === '' ||
+      lastNameRef.current?.value.trim() === '' ||
+      emailRef.current?.value.trim() === '' ||
+      messageRef.current?.value.trim() === '';
+
+    // Set formDisabled to true if any field is empty, false if all are populated
+    setFormDisabled(anyFieldEmpty);
+  };
+
+  const handleInputChange = useCallback(() => {
+    checkFormValidity();
+  }, []);
+
   return (
     <Flex
       flexDirection="column"
@@ -69,6 +86,7 @@ const ContactForm = () => {
                 color: useColorModeValue("purple.700", "whiteAlpha.900"),
               }}
               placeholder="First Name"
+              onChange={checkFormValidity}
             />
           </FormControl>
         </Box>
@@ -82,6 +100,7 @@ const ContactForm = () => {
                 color: useColorModeValue("purple.700", "whiteAlpha.900"),
               }}
               placeholder="Last Name"
+              onChange={checkFormValidity}
             />
           </FormControl>
         </Box>
@@ -95,6 +114,7 @@ const ContactForm = () => {
           }}
           placeholder="Email"
           type="email"
+          onChange={checkFormValidity}
         />
       </FormControl>
       <FormControl isRequired>
@@ -105,9 +125,10 @@ const ContactForm = () => {
             color: useColorModeValue("purple.700", "whiteAlpha.900"),
           }}
           placeholder="Message"
+          onChange={checkFormValidity}
         />
       </FormControl>
-      <Button onClick={handleSubmit} disabled={(!firstNameRef.current?.value || !lastNameRef.current?.value || !emailRef.current?.value || !messageRef.current?.value)} colorScheme="purple" width="40%">
+      <Button onClick={handleSubmit} disabled={formDisabled} colorScheme="purple" width="40%">
         Send
       </Button>
     </Flex>

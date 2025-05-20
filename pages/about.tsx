@@ -34,7 +34,7 @@ const AboutMe: NextPage = () => {
         
         justifyContent="space-between"
       >
-        <Flex as="section" width="100%" gap={3} justifyContent="space-between">
+        <Flex as="section" width="100%" gap={3} justifyContent="space-between" alignItems="center">
           <Box width={["100%", "100%", "50%"]} height="100%">
             <motion.div
               initial={{ opacity: 0 }}
@@ -53,13 +53,12 @@ const AboutMe: NextPage = () => {
               exit={{ opacity: 0 }}
             >
               <Text fontSize="lg" fontWeight="light" lineHeight="8">
-                Hi! My name is Remy Papillon, and I am currently a senior
-                enrolled at {<span style={{fontWeight: "bold"}}>Fairfield University</span>} pursuing a degree in Computer
-                Science. I&apos;m originally from Brooklyn, New York and
+                Hi! My name is Remy Papillon, and I am currently a Web Developer
+                employed at {<span style={{fontWeight: "bold"}}>Schrödinger</span>}, a scientific software and biotechnology company based out of New York City. I&apos;m originally from Brooklyn, New York and
                 I&apos;m currently living in Trumbull, Connecticut.
               </Text>
               <Text mt={2} fontSize="lg" fontWeight="light" lineHeight="8">
-                I&apos;ve been writing React projects for 2 years now, and
+                I&apos;ve been writing React projects for 4 years now, and
                 I&apos;ve held numerous internships stretching back to high
                 school working with companies such as {<span style={{fontWeight: "bold"}}>Schrödinger</span>}, {<span style={{fontWeight: "bold"}}>Brooklyn Chamber of Commerce</span>}, and {<span style={{fontWeight: "bold"}}>Heartshare Health Services of New York</span>}.
               </Text>

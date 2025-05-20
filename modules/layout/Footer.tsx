@@ -22,7 +22,7 @@ const Footer = () => {
       alignItems="center"
       position="relative"
     >
-      <Text>Remsfield Papillon, 2022</Text>
+      <Text>Remsfield Papillon, 2025</Text>
       <Text fontSize="sm">
         Splash Image by{" "}
         {
