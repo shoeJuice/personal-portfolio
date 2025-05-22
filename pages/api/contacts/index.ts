@@ -41,18 +41,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     case "POST":
       return new Promise((resolve, reject) => {
+        let resData = null;
         addContact(req.body).then((data) => {
           console.log("Incoming Data", req.body);
-          res.status(200).json(data);
-        });
-
-        resolve(null);
+          resolve(res.status(200).json(data));
+        }).catch((err) => reject(err));
       });
     default:
       return new Promise((resolve, reject) => {
         res.setHeader("Allow", ["GET", "POST"]);
         res.status(405).end(`Method ${method} Not Allowed`);
-        resolve(null);
+        resolve(res);
       });
   }
 }

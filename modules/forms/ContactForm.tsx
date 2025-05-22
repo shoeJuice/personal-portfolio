@@ -12,10 +12,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+type ContactFormProps = {
+  handleFormSent: (isFormSent: boolean) => void
+};
+
 /**
  * Contact form component
  */
-const ContactForm = () => {
+const ContactForm = (props: ContactFormProps) => {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -40,12 +44,13 @@ const ContactForm = () => {
       return;
     }
     axios
-      .post("/api/contact", submitData, {
+      .post("/api/contacts", submitData, {
         baseURL: process.env.NEXT_PUBLIC_BASE_URL,
       })
       .then(() => {
         console.log("Data submitted, view in console");
-      });
+        props.handleFormSent(true);
+      }).catch((err) => console.error(err));
   };
 
    const checkFormValidity = () => {
