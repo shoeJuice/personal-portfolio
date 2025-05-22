@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { firebaseFirestore } from "../../../config/firebaseConfig";
+import { firebaseApp, firebaseFirestore } from "../../../config/firebaseConfig";
 import {
   query,
   collection,
@@ -8,7 +8,13 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 
-type Data = {};
+type Data = {
+  "First Name": string;
+  "Last Name": string;
+  "Email Address": string;
+  Message: string;
+  createdAt: string;
+};
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
@@ -25,12 +31,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   };
 
   const addContact = async (contact: Data) => {
-    return await addDoc(
-      collection(firebaseFirestore, "contact-list"),
-      contact
-    ).catch((err) => {
-      throw new Error(err);
-    });
+    return await addDoc(collection(firebaseFirestore, "contact-list"), contact)
+      .then(async (doc) => {
+        await addDoc(collection(firebaseFirestore, "mail"), {
+          to: process.env.EMAIL_ADDRESS,
+          message: {
+            subject: `New Contact Request From ${contact["First Name"]} ${contact["Last Name"]}`,
+            text: contact.Message,
+          },
+        });
+      })
+      .catch((err) => {
+        throw new Error(err);
+      });
   };
 
   switch (method) {
@@ -42,10 +55,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     case "POST":
       return new Promise((resolve, reject) => {
         let resData = null;
-        addContact(req.body).then((data) => {
-          console.log("Incoming Data", req.body);
-          resolve(res.status(200).json(data));
-        }).catch((err) => reject(err));
+        addContact(req.body)
+          .then((data) => {
+            console.log("Incoming Data", req.body);
+            resolve(res.status(200).json(data));
+          })
+          .catch((err) => reject(err));
       });
     default:
       return new Promise((resolve, reject) => {
