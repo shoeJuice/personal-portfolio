@@ -7,6 +7,7 @@ import {
   addDoc,
   deleteDoc,
 } from "firebase/firestore";
+import renderEmailTemplateToHTML, { ContactEmailTemplate } from "../../../modules/templates/contactEmail";
 
 type Data = {
   "First Name": string;
@@ -33,11 +34,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const addContact = async (contact: Data) => {
     return await addDoc(collection(firebaseFirestore, "contact-list"), contact)
       .then(async (doc) => {
+        const contactMessageHtml = renderEmailTemplateToHTML(ContactEmailTemplate, contact);
         await addDoc(collection(firebaseFirestore, "mail"), {
           to: process.env.EMAIL_ADDRESS,
           message: {
             subject: `New Contact Request From ${contact["First Name"]} ${contact["Last Name"]}`,
             text: contact.Message,
+            html: contactMessageHtml,
           },
         });
       })

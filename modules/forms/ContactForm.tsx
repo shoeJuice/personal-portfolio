@@ -26,7 +26,8 @@ const ContactForm = (props: ContactFormProps) => {
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const [formDisabled, setFormDisabled] = useState<boolean>(true);
 
-  const handleSubmit = () => {
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
     let submitData = {
       "First Name": firstNameRef.current?.value,
       "Last Name": lastNameRef.current?.value,
@@ -58,6 +59,7 @@ const ContactForm = (props: ContactFormProps) => {
       firstNameRef.current?.value.trim() === '' ||
       lastNameRef.current?.value.trim() === '' ||
       emailRef.current?.value.trim() === '' ||
+      !emailRef.current?.validity.valid ||
       messageRef.current?.value.trim() === '';
 
     // Set formDisabled to true if any field is empty, false if all are populated
@@ -80,6 +82,7 @@ const ContactForm = (props: ContactFormProps) => {
       data-testid="contact-form"
       boxShadow="lg"
     >
+      <form onSubmit={handleSubmit}>
       <HStack>
         <Box>
           <FormControl isRequired>
@@ -133,9 +136,10 @@ const ContactForm = (props: ContactFormProps) => {
           onChange={checkFormValidity}
         />
       </FormControl>
-      <Button onClick={handleSubmit} disabled={formDisabled} colorScheme="purple" width="40%">
+      <Button type="submit" disabled={formDisabled} colorScheme="purple" width="40%">
         Send
       </Button>
+      </form>
     </Flex>
   );
 };
